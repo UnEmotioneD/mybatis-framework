@@ -35,7 +35,7 @@ public class UpdateFormServlet extends HttpServlet {
 		String boardNo = request.getParameter("boardNo");
 
 		String pageGb = "update";
-		
+
 		BoardService service = new BoardService();
 		Board board = service.selectOneBoard(boardNo, pageGb);
 

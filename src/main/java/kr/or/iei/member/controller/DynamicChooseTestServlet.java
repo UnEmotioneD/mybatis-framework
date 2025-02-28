@@ -32,13 +32,13 @@ public class DynamicChooseTestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String select = request.getParameter("select");
 		String keyword = request.getParameter("keyword");
-		
+
 		MemberService service = new MemberService();
 		ArrayList<Member> list = service.selDynamicChooseTest(select, keyword);
-		
+
 		request.setAttribute("memberList", list);
 		request.getRequestDispatcher("/views/dynamicChooseTest.jsp").forward(request, response);
 	}

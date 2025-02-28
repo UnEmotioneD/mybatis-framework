@@ -36,7 +36,7 @@ public class ChgLevelServlet extends HttpServlet {
 
 		MemberService service = new MemberService();
 		int result = service.chgMemberLevel(memberNo, memberLevel);
-		
+
 		response.getWriter().print(result);
 	}
 
