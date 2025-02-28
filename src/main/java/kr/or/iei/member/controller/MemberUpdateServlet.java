@@ -39,7 +39,7 @@ public class MemberUpdateServlet extends HttpServlet {
 		String memberEmail = request.getParameter("memberEmail");
 		String memberPhone = request.getParameter("memberPhone");
 		String memberAddr = request.getParameter("memberAddr");
-		
+
 		Member member = new Member();
 		member.setMemberNo(memberNo);
 		member.setMemberPw(memberPw);

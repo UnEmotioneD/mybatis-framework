@@ -30,13 +30,13 @@ public class DeleteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		// ?delNo=1&delNo=2&delNo=3... 이런 식으로 전달됨
-		String [] delNo = request.getParameterValues("delNo");
-		
+		String[] delNo = request.getParameterValues("delNo");
+
 		BoardService service = new BoardService();
 		int result = service.deleteBoard(delNo);
-		
+
 		if (result > 0) {
 			request.setAttribute("title", "성공");
 			request.setAttribute("text", "게시글이 삭제되었습니다");
@@ -46,8 +46,8 @@ public class DeleteServlet extends HttpServlet {
 			request.setAttribute("text", "게시글 삭제 도중 오류가 발생");
 			request.setAttribute("icon", "error");
 		}
-			request.setAttribute("loc", "/board/getList?reqPage=1");
-			request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp").forward(request, response);
+		request.setAttribute("loc", "/board/getList?reqPage=1");
+		request.getRequestDispatcher("/WEB-INF/views/common/msg.jsp").forward(request, response);
 	}
 
 	/**

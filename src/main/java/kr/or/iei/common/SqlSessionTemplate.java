@@ -26,7 +26,7 @@ public class SqlSessionTemplate {
 			SqlSessionFactory factory = builder.build(is);
 
 			// SqlSession 객채 생성
-			session = factory.openSession(false); // false : autoCommit 하지 않음
+			session = factory.openSession(true); // false : autoCommit 하지 않음
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

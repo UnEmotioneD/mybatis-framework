@@ -30,14 +30,14 @@ public class BackHistoryServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		System.out.println("Start from BackHistoryServlet");
 
 		HttpSession session = request.getSession(false);
 		String pageId = request.getParameter("pageId");
 
 		int result = 0;
-		
+
 		if (session != null) {
 			Set<String> viewedPages = (Set<String>) session.getAttribute("pageId");
 			if (viewedPages != null && pageId != null) {

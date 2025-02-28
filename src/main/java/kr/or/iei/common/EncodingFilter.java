@@ -35,7 +35,7 @@ public class EncodingFilter extends HttpFilter implements Filter {
 		// 인코딩
 		request.setCharacterEncoding("UTF-8");
 
-		// filter 를 여러개 만들었을때 다음 필터를 실행할때 연개하고 마지막에 .doFilter() 가 SERVLET 을 불러온다 
+		// filter 를 여러개 만들었을때 다음 필터를 실행할때 연개하고 마지막에 .doFilter() 가 SERVLET 을 불러온다
 		chain.doFilter(request, response);
 	}
 

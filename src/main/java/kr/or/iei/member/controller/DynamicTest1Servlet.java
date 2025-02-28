@@ -37,16 +37,16 @@ public class DynamicTest1Servlet extends HttpServlet {
 		String sFlag2 = request.getParameter("sFlag2");
 		String sFlag3 = request.getParameter("sFlag3");
 		String sFlag4 = request.getParameter("sFlag4");
-		
+
 		Member member = new Member();
 		member.setSFlag1(sFlag1);
 		member.setSFlag2(sFlag2);
 		member.setSFlag3(sFlag3);
 		member.setSFlag4(sFlag4);
-		
+
 		MemberService service = new MemberService();
 		ArrayList<Member> list = service.selDynamicTest1(member);
-		
+
 		request.setAttribute("memberList", list);
 		request.getRequestDispatcher("/views/dynamicTest1.jsp").forward(request, response);
 	}

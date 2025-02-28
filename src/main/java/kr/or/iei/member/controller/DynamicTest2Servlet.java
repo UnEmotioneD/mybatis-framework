@@ -34,10 +34,10 @@ public class DynamicTest2Servlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String sFlag1 = request.getParameter("sFlag1");
-		
+
 		MemberService service = new MemberService();
 		ArrayList<Member> list = service.selDynamicTest2(sFlag1);
-		
+
 		request.setAttribute("memberList", list);
 		request.getRequestDispatcher("/views/dynamicTest2.jsp").forward(request, response);
 	}

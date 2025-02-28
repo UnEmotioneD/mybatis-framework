@@ -32,7 +32,7 @@ public class DetailViewServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		HttpSession session = request.getSession(false);
 		String pageId = "detailView";
 		session.setAttribute("pageId", pageId);
@@ -42,7 +42,7 @@ public class DetailViewServlet extends HttpServlet {
 		BoardService service = new BoardService();
 
 		String pageGb = request.getParameter("pageGb");
-		
+
 		Board board = service.selectOneBoard(boardNo, pageGb);
 
 		request.setAttribute("board", board);
